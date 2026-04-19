@@ -95,7 +95,7 @@ a:hover { text-decoration: underline; text-decoration-color: var(--ink-dim); }
   line-height: 1.02;
 }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
-h1 { font-size: clamp(2.75rem, 7vw, 5.25rem); line-height: 1.02; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.02; }
 h2 { font-size: clamp(2rem, 4vw, 3rem);     line-height: 1.08; }
 h3 { font-size: 1.25rem; line-height: 1.3; }
 p  { hanging-punctuation: first last; }
@@ -178,15 +178,11 @@ section { padding-block: var(--space-6); }
   .hero__grid { grid-template-columns: minmax(0, 1fr) 380px; }
 }
 
-.hero__icon {
-  width: 72px; height: 72px;
-  border-radius: 16px;
-  margin-bottom: var(--space-3);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 1px var(--rule) inset;
-}
-
 .hero__title {
   margin-bottom: var(--space-3);
+}
+@media (min-width: 640px) {
+  .hero__title { white-space: nowrap; }
 }
 .hero__tagline {
   font-size: clamp(1.125rem, 1.5vw, 1.375rem);
@@ -235,7 +231,6 @@ section { padding-block: var(--space-6); }
   line-height: 1.0;
   color: var(--ink);
 }
-.wordmark__line { display: block; }
 
 /* -- what-it-does ---------------------------------------------------------- */
 
