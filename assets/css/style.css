@@ -362,41 +362,9 @@ section { padding-block: var(--space-6); }
   margin-bottom: var(--space-4);
 }
 
-.signup-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  max-width: 34rem;
-}
-.signup-form__field {
-  flex: 1 1 16rem;
-  min-width: 0;
-}
-.signup-form label.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0;
-  overflow: hidden; clip: rect(0 0 0 0);
-  white-space: nowrap; border: 0;
-}
-.signup-form input[type="email"] {
-  width: 100%;
-  padding: 0.95rem 1.1rem;
-  background: var(--bg-elev);
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.2;
-  transition: border-color 200ms ease, background 200ms ease;
-}
-.signup-form input[type="email"]::placeholder { color: var(--ink-muted); }
-.signup-form input[type="email"]:focus-visible {
-  outline: none;
-  border-color: var(--ink);
-  background: #18181d;
-}
-.signup-form button {
-  padding: 0.95rem 1.6rem;
+.signup-btn {
+  display: inline-block;
+  padding: 1rem 1.75rem;
   background: var(--ink);
   color: var(--bg);
   border-radius: 999px;
@@ -404,25 +372,21 @@ section { padding-block: var(--space-6); }
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
+  text-decoration: none;
   transition: transform 150ms ease, background 200ms ease;
 }
-.signup-form button:hover { transform: translateY(-1px); background: #fff; }
-.signup-form button:active { transform: translateY(0); }
+.signup-btn:hover {
+  transform: translateY(-1px);
+  background: #fff;
+  text-decoration: none;
+  color: var(--bg);
+}
+.signup-btn:active { transform: translateY(0); }
 
 .signup__sign {
   margin-top: var(--space-3);
   color: var(--ink-muted);
   font-style: italic;
-}
-
-.signup__success {
-  padding: var(--space-3) var(--space-3);
-  border: 1px solid var(--rule-strong);
-  border-radius: var(--radius-md);
-  background: var(--bg-elev);
-  font-size: 1.0625rem;
-  color: var(--ink);
-  max-width: 34rem;
 }
 
 /* -- footer ---------------------------------------------------------------- */

@@ -30,20 +30,26 @@ No server-side code, no environment variables required.
 
 ## Kit (email signup)
 
-The signup form in `index.html` posts to a Kit (formerly ConvertKit) form:
+The signup section uses Kit's modal embed. Two pieces:
 
-```html
-<form action="https://app.kit.com/forms/cb0bc8368b/subscriptions" ...>
-```
+1. An anchor that triggers the modal:
+   ```html
+   <a class="signup-btn"
+      data-formkit-toggle="cb0bc8368b"
+      href="https://symmetry-lab.kit.com/cb0bc8368b">…</a>
+   ```
+2. Kit's embed script, loaded before `</body>`:
+   ```html
+   <script async data-uid="cb0bc8368b"
+     src="https://symmetry-lab.kit.com/cb0bc8368b/index.js"></script>
+   ```
 
-The form ID `cb0bc8368b` is the public form slug from the Kit embed snippet.
-If you ever need to point the site at a different form, search `index.html`
-for `cb0bc8368b` and replace it with the new form slug.
+The script hijacks the click and opens a Kit-hosted modal overlay. If the
+script fails to load, the anchor's `href` degrades to the hosted form page
+on `symmetry-lab.kit.com`.
 
-JavaScript in `assets/js/main.js` intercepts the submit and POSTs with
-`fetch` so the page can show an inline "thanks" message without a redirect.
-If JS is disabled, the form falls back to a native POST that redirects to
-Kit's hosted confirmation page.
+The ID `cb0bc8368b` is the Kit form UID. To point at a different form,
+replace both occurrences in `index.html`.
 
 ## Assets
 
@@ -102,7 +108,6 @@ Both are preloaded in each page's `<head>` for fast first paint.
 ├── support.html.bak      # previous single-file support page
 └── assets/
     ├── css/style.css
-    ├── js/main.js
     ├── fonts/*.woff2
     ├── images/
     │   ├── icon.png, icon-32.png, icon-180.png
