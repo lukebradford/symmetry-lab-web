@@ -30,34 +30,30 @@ No server-side code, no environment variables required.
 
 ## Kit (email signup)
 
-The signup button in `index.html` is a plain anchor that opens Kit's
-hosted form page in a new tab:
+Clicking "Get updates by email" shows Kit's modal in-page. Two pieces:
 
-```html
-<a class="signup-btn"
-   href="https://symmetry-lab.kit.com/cb0bc8368b"
-   target="_blank" rel="noopener">…</a>
-```
+1. A toggle anchor in `index.html`:
+   ```html
+   <a class="signup-btn" data-formkit-toggle="cb0bc8368b"
+      href="https://symmetry-lab.kit.com/cb0bc8368b">…</a>
+   ```
+2. A small lazy-loader in `assets/js/main.js` that injects Kit's embed
+   script only after the button is first clicked.
 
-No Kit JavaScript is loaded on the site. This keeps the page free of
-third-party scripts (including any auto-popup / slide-in behavior
-configured on Kit's side) and guarantees the signup flow works
-regardless of Kit's form-display settings.
+Lazy-loading matters because the Kit form is configured with an
+auto-display trigger in the Kit dashboard (timed popup / slide-in /
+etc.). Loading the script on click means the click itself is what
+causes the modal to appear — no unsolicited popup on page load, and no
+third-party JS on the initial page load. The anchor's `href` is the
+graceful degradation for when JavaScript is disabled.
 
-If you'd prefer the in-page modal embed, replace the anchor with:
-
-```html
-<a class="signup-btn" data-formkit-toggle="cb0bc8368b"
-   href="https://symmetry-lab.kit.com/cb0bc8368b">…</a>
-<script async data-uid="cb0bc8368b"
-  src="https://symmetry-lab.kit.com/cb0bc8368b/index.js"></script>
-```
-
-…and set the form's trigger to "on click" in your Kit dashboard
-(otherwise the script will pop the modal on page load).
+Once the Kit form's display trigger is changed to "click only" in the
+Kit dashboard, the lazy-loader is no longer needed — you can replace
+the `<script src="/assets/js/main.js">` tag with Kit's own embed
+script loaded normally, and delete `main.js`.
 
 The ID `cb0bc8368b` is the Kit form UID. To point at a different form,
-replace every occurrence in `index.html`.
+replace every occurrence in `index.html` and `main.js`.
 
 ## Assets
 
