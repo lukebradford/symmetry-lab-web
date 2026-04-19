@@ -233,44 +233,9 @@ section { padding-block: var(--space-6); }
   font-weight: 650;
   letter-spacing: -0.025em;
   line-height: 1.0;
+  color: var(--ink);
 }
 .wordmark__line { display: block; }
-.wordmark__letter { display: inline-block; }
-
-/* Baseline: desaturated rainbow — reads near-monochrome. */
-.wordmark--rainbow .wordmark__letter {
-  color: hsl(var(--h, 0), 22%, 88%);
-  transition: color 900ms ease, transform 700ms cubic-bezier(.2,.7,.2,1);
-}
-.wordmark--rainbow .wordmark__letter:nth-child(1) { --h: 0;   }
-.wordmark--rainbow .wordmark__letter:nth-child(2) { --h: 32;  }
-.wordmark--rainbow .wordmark__letter:nth-child(3) { --h: 48;  }
-.wordmark--rainbow .wordmark__letter:nth-child(4) { --h: 120; }
-.wordmark--rainbow .wordmark__letter:nth-child(5) { --h: 190; }
-.wordmark--rainbow .wordmark__letter:nth-child(6) { --h: 215; }
-.wordmark--rainbow .wordmark__letter:nth-child(7) { --h: 260; }
-.wordmark--rainbow .wordmark__letter:nth-child(8) { --h: 310; }
-
-@media (hover: hover) {
-  .wordmark--rainbow:hover .wordmark__letter {
-    color: hsl(var(--h, 0), 85%, 70%);
-    transform: translateY(-2px);
-  }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(2) { transition-delay: 40ms; }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(3) { transition-delay: 80ms; }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(4) { transition-delay: 120ms; }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(5) { transition-delay: 160ms; }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(6) { transition-delay: 200ms; }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(7) { transition-delay: 240ms; }
-  .wordmark--rainbow:hover .wordmark__letter:nth-child(8) { transition-delay: 280ms; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wordmark--rainbow .wordmark__letter {
-    transition: none;
-    color: var(--ink);
-  }
-}
 
 /* -- what-it-does ---------------------------------------------------------- */
 
