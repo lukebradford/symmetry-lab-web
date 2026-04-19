@@ -64,14 +64,17 @@ Processed assets live under `assets/`. They were generated with:
 
 ```bash
 # video — H.264 mp4 + VP9 webm + poster frame
-ffmpeg -i clip.mov -an -vf "scale=-2:1440" -c:v libx264 -preset slow \
-  -crf 26 -pix_fmt yuv420p -movflags +faststart assets/video/clip.mp4
+# The `crop=in_w:in_h-130:0:130` filter strips the top 130px so the iOS
+# status bar from the screen recording is hidden.
+ffmpeg -i clip.mov -an -vf "crop=in_w:in_h-130:0:130,scale=-2:1440" \
+  -c:v libx264 -preset slow -crf 26 -pix_fmt yuv420p -movflags +faststart \
+  assets/video/clip.mp4
 
-ffmpeg -i clip.mov -an -vf "scale=-2:1440" -c:v libvpx-vp9 -crf 34 -b:v 0 \
-  assets/video/clip.webm
+ffmpeg -i clip.mov -an -vf "crop=in_w:in_h-130:0:130,scale=-2:1440" \
+  -c:v libvpx-vp9 -crf 34 -b:v 0 assets/video/clip.webm
 
-ffmpeg -ss 0.5 -i clip.mov -frames:v 1 -q:v 3 \
-  assets/images/video-poster.jpg
+ffmpeg -ss 0.5 -i clip.mov -vf "crop=in_w:in_h-130:0:130" \
+  -frames:v 1 -q:v 3 assets/images/video-poster.jpg
 
 # icons — resized + optimized via Pillow
 python3 -c "from PIL import Image; i=Image.open('icon.png').convert('RGBA'); \
@@ -86,14 +89,12 @@ short Pillow script — regenerate it if you change the wordmark or tagline.
 
 ## Fonts
 
-Self-hosted from Google Fonts:
-
-- `assets/fonts/syne.woff2` — Syne (variable, weight 400–800), used for
-  headings and UI chrome.
-- `assets/fonts/newsreader.woff2` — Newsreader (weight 400), used for body
-  copy.
-
-Both are preloaded in each page's `<head>` for fast first paint.
+- Headings, UI chrome, and the footer use the platform system sans stack
+  (San Francisco on Apple devices, Segoe UI on Windows, `system-ui`
+  fallback elsewhere). No web fonts involved.
+- Body copy on the privacy and support pages uses self-hosted Newsreader
+  (`assets/fonts/newsreader.woff2`, weight 400) from Google Fonts,
+  preloaded in each page's `<head>` for fast first paint.
 
 ## File layout
 

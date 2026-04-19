@@ -3,15 +3,6 @@
    ------------------------------------------------------------------------- */
 
 @font-face {
-  font-family: 'Syne';
-  font-style: normal;
-  font-weight: 400 800;
-  font-display: swap;
-  src: url('/assets/fonts/syne.woff2') format('woff2-variations'),
-       url('/assets/fonts/syne.woff2') format('woff2');
-}
-
-@font-face {
   font-family: 'Newsreader';
   font-style: normal;
   font-weight: 400;
@@ -22,15 +13,15 @@
 /* -- tokens ---------------------------------------------------------------- */
 
 :root {
-  --bg:           #0b0b0d;
-  --bg-elev:      #131317;
+  --bg:           #000000;
+  --bg-elev:      #0d0d0f;
   --ink:          #f0ebe2;
   --ink-dim:      #a9a49b;
   --ink-muted:    #6d6a62;
-  --rule:         #24242a;
-  --rule-strong:  #3a3a42;
+  --rule:         #1c1c20;
+  --rule-strong:  #2e2e34;
 
-  --font-display: 'Syne', system-ui, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
   --font-body:    'Newsreader', Georgia, 'Times New Roman', serif;
 
   --space-1:  0.5rem;
@@ -218,7 +209,7 @@ section { padding-block: var(--space-6); }
   width: 100%;
   max-width: 380px;
   margin-inline: auto;
-  aspect-ratio: 1320 / 2868;  /* matches source */
+  aspect-ratio: 1320 / 2738;  /* source cropped above status bar */
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--bg-elev);
@@ -386,7 +377,6 @@ section { padding-block: var(--space-6); }
 .signup__sign {
   margin-top: var(--space-3);
   color: var(--ink-muted);
-  font-style: italic;
 }
 
 /* -- footer ---------------------------------------------------------------- */
@@ -395,6 +385,7 @@ section { padding-block: var(--space-6); }
   border-top: 1px solid var(--rule);
   padding-block: var(--space-5);
   color: var(--ink-muted);
+  font-family: var(--font-display);
   font-size: 0.9375rem;
 }
 .site-footer .container {
