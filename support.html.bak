@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symmetry Lab — Support</title>
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --muted: #555;
+    --accent: #0066cc;
+    --bg: #fafafa;
+    --card: #fff;
+    --border: #e5e5e5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #f0f0f0;
+      --muted: #aaa;
+      --accent: #4a9eff;
+      --bg: #111;
+      --card: #1c1c1e;
+      --border: #2c2c2e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin: 2.25rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  p { margin: 0.5rem 0; }
+  .lede { color: var(--muted); margin-bottom: 2rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .contact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  details {
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+  }
+  details:last-of-type { border-bottom: none; }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.25rem 0;
+  }
+  summary:hover { color: var(--accent); }
+  details[open] summary { margin-bottom: 0.5rem; }
+  details p { color: var(--muted); }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer a { margin-right: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>Symmetry Lab Support</h1>
+<p class="lede">Questions, bug reports, or feedback — happy to help.</p>
+
+<div class="contact">
+  <strong>Email:</strong> <a href="mailto:lukebradfordapps@gmail.com?subject=Symmetry%20Lab%20Support">lukebradfordapps@gmail.com</a><br>
+  <span style="color: var(--muted); font-size: 0.9rem;">Please include your iOS version and device model if reporting a bug.</span>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+
+<details>
+  <summary>How do I save a pattern to my Photos library?</summary>
+  <p>Tap the share button and choose <em>Save Image</em> from the share sheet. The share sheet is also where you'll find options to post to social apps, AirDrop, or save to Files.</p>
+</details>
+
+<details>
+  <summary>Is my artwork or data shared with anyone?</summary>
+  <p>No. Your patterns stay on your device unless you explicitly share them. See the <a href="https://lukebradford.xyz/Symmetry%20Lab%20privacy%20policy.pdf">privacy policy</a> for full details.</p>
+</details>
+
+<details>
+  <summary>I found a bug or have a feature request.</summary>
+  <p>Please email me at <a href="mailto:lukebradfordapps@gmail.com?subject=Symmetry%20Lab%20Bug%20Report">lukebradfordapps@gmail.com</a>. Screenshots, screen recordings, and steps to reproduce are enormously helpful.</p>
+</details>
+
+<details>
+  <summary>Which devices and iOS versions are supported?</summary>
+  <p>Symmetry Lab runs on iPhone and iPad. Check the App Store listing for the current minimum iOS version.</p>
+</details>
+
+<footer>
+  <a href="https://lukebradford.xyz/Symmetry%20Lab%20privacy%20policy.pdf">Privacy Policy</a>
+  <a href="mailto:lukebradfordapps@gmail.com">Contact</a>
+</footer>
+
+</body>
+</html>
