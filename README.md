@@ -30,26 +30,34 @@ No server-side code, no environment variables required.
 
 ## Kit (email signup)
 
-The signup section uses Kit's modal embed. Two pieces:
+The signup button in `index.html` is a plain anchor that opens Kit's
+hosted form page in a new tab:
 
-1. An anchor that triggers the modal:
-   ```html
-   <a class="signup-btn"
-      data-formkit-toggle="cb0bc8368b"
-      href="https://symmetry-lab.kit.com/cb0bc8368b">…</a>
-   ```
-2. Kit's embed script, loaded before `</body>`:
-   ```html
-   <script async data-uid="cb0bc8368b"
-     src="https://symmetry-lab.kit.com/cb0bc8368b/index.js"></script>
-   ```
+```html
+<a class="signup-btn"
+   href="https://symmetry-lab.kit.com/cb0bc8368b"
+   target="_blank" rel="noopener">…</a>
+```
 
-The script hijacks the click and opens a Kit-hosted modal overlay. If the
-script fails to load, the anchor's `href` degrades to the hosted form page
-on `symmetry-lab.kit.com`.
+No Kit JavaScript is loaded on the site. This keeps the page free of
+third-party scripts (including any auto-popup / slide-in behavior
+configured on Kit's side) and guarantees the signup flow works
+regardless of Kit's form-display settings.
+
+If you'd prefer the in-page modal embed, replace the anchor with:
+
+```html
+<a class="signup-btn" data-formkit-toggle="cb0bc8368b"
+   href="https://symmetry-lab.kit.com/cb0bc8368b">…</a>
+<script async data-uid="cb0bc8368b"
+  src="https://symmetry-lab.kit.com/cb0bc8368b/index.js"></script>
+```
+
+…and set the form's trigger to "on click" in your Kit dashboard
+(otherwise the script will pop the modal on page load).
 
 The ID `cb0bc8368b` is the Kit form UID. To point at a different form,
-replace both occurrences in `index.html`.
+replace every occurrence in `index.html`.
 
 ## Assets
 
