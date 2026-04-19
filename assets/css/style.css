@@ -188,8 +188,10 @@ section { padding-block: var(--space-6); }
   font-size: clamp(1.125rem, 1.5vw, 1.375rem);
   line-height: 1.45;
   color: var(--ink-dim);
-  max-width: 28ch;
   margin-bottom: var(--space-4);
+}
+@media (min-width: 640px) {
+  .hero__tagline { white-space: nowrap; }
 }
 
 .app-store-badge {
