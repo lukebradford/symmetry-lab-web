@@ -336,6 +336,25 @@ section { padding-block: var(--space-6); }
   color: var(--bg);
 }
 .signup-btn:active { transform: translateY(0); }
+.signup-btn.is-loading {
+  opacity: 0.72;
+  cursor: progress;
+}
+.signup-btn.is-loading::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em; height: 0.7em;
+  margin-left: 0.6em;
+  vertical-align: -0.06em;
+  border: 1.5px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: signup-spin 0.7s linear infinite;
+}
+@keyframes signup-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .signup-btn.is-loading::after { animation: none; }
+}
 
 .signup__sign {
   margin-top: var(--space-3);
