@@ -5,6 +5,7 @@
 
   let requested = false;
   let ready = false;
+  let pendingClick = false;
 
   function loadKit() {
     if (requested) return;
@@ -13,8 +14,21 @@
     s.async = true;
     s.setAttribute('data-uid', formUid);
     s.src = `https://symmetry-lab.kit.com/${formUid}/index.js`;
-    s.addEventListener('load', () => { ready = true; btn.classList.remove('is-loading'); });
-    s.addEventListener('error', () => { btn.classList.remove('is-loading'); requested = false; });
+    s.addEventListener('load', () => {
+      ready = true;
+      btn.classList.remove('is-loading');
+      if (pendingClick) {
+        pendingClick = false;
+        // Yield a tick so Kit can finish wiring its [data-formkit-toggle]
+        // handler before we re-dispatch the click that opens the modal.
+        setTimeout(() => btn.click(), 0);
+      }
+    });
+    s.addEventListener('error', () => {
+      btn.classList.remove('is-loading');
+      requested = false;
+      pendingClick = false;
+    });
     document.body.appendChild(s);
   }
 
@@ -28,8 +42,13 @@
     // Always suppress navigation — we don't want the href fallback to fire
     // while we're trying to open the modal in-page.
     event.preventDefault();
-    loadKit();
-    if (!ready) btn.classList.add('is-loading');
+    if (!ready) {
+      // Kit's click handler isn't attached yet; remember the intent and
+      // replay the click from the script's load handler.
+      pendingClick = true;
+      btn.classList.add('is-loading');
+      loadKit();
+    }
     // Once the script has loaded, Kit's own click handler on
     // [data-formkit-toggle] opens the modal on this and subsequent clicks.
   });
