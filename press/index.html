@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symmetry Lab — Press Kit</title>
+    <meta name="description" content="Press kit for Symmetry Lab, an iOS app that turns simple strokes into intricate symmetrical art. Pitch, screenshots, demo video, app icon, and developer info — everything you need to write about the app.">
+    <link rel="canonical" href="https://symmetrylab.app/press/">
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/images/icon-180.png">
+
+    <!-- Social / link previews (this page gets shared between editors) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://symmetrylab.app/press/">
+    <meta property="og:title" content="Symmetry Lab — Press Kit">
+    <meta property="og:description" content="An iOS app that turns simple strokes into intricate symmetrical art. Pitch, screenshots, demo video, icon, and contact — all in one place.">
+    <meta property="og:image" content="https://symmetrylab.app/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Symmetry Lab — Press Kit">
+    <meta name="twitter:description" content="Everything you need to write about Symmetry Lab.">
+    <meta name="twitter:image" content="https://symmetrylab.app/assets/images/og-image.png">
+    <meta name="theme-color" content="#000000">
+
+    <style>
+        @font-face {
+            font-family: 'Newsreader';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/assets/fonts/newsreader.woff2') format('woff2');
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg:          #000000;
+            --card:        #0d0d0f;
+            --ink:         #f0ebe2;
+            --ink-dim:     #a9a49b;
+            --ink-muted:   #6d6a62;
+            --rule:        #1c1c20;
+            --rule-strong: #2e2e34;
+
+            --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+            --font-body:    'Newsreader', Georgia, 'Times New Roman', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        a { color: var(--ink); text-decoration: none; text-underline-offset: 0.2em; }
+        a:hover { text-decoration: underline; text-decoration-color: var(--ink-dim); }
+        ::selection { background: var(--ink); color: var(--bg); }
+
+        /* ---------- header ---------- */
+        header {
+            text-align: center;
+            padding: 4.5rem 1.5rem 1rem;
+        }
+        header .eyebrow {
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 1.5rem;
+        }
+        header .app-icon {
+            display: block;
+            width: 84px;
+            height: 84px;
+            margin: 0 auto 1.1rem;
+            border-radius: 19px;
+            border: 1px solid var(--rule);
+        }
+        header .wordmark {
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            font-size: clamp(2.75rem, 7vw, 4.25rem);
+            line-height: 1.02;
+        }
+        header .tagline {
+            font-size: 1.2rem;
+            color: var(--ink-dim);
+            margin-top: 0.6rem;
+        }
+
+        /* ---------- layout ---------- */
+        main {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+        section { margin-bottom: 3.75rem; }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .pitch {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: var(--ink);
+            text-align: justify;
+        }
+        .pitch strong { color: #fff; font-weight: 600; }
+
+        /* classic italic ampersand */
+        .amp {
+            font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* ---------- buttons ---------- */
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        .btn {
+            font-family: var(--font-display);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.4rem;
+            border: 1px solid var(--rule-strong);
+            border-radius: 10px;
+            color: var(--ink);
+            font-size: 0.98rem;
+            font-weight: 500;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+        .btn:hover { text-decoration: none; }
+        .btn-primary { background: var(--ink); color: #000; border-color: var(--ink); }
+        .btn-primary:hover { background: #fff; border-color: #fff; }
+        .btn-ghost:hover { background: #14141a; border-color: #4a4a55; }
+        .btn .arrow { font-size: 0.85em; opacity: 0.7; }
+
+        /* ---------- fast facts ---------- */
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.25rem 2rem;
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+        }
+        .facts .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.15rem 1rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--rule);
+        }
+        .facts .row .k { font-family: var(--font-display); color: var(--ink-muted); font-size: 0.9rem; white-space: nowrap; }
+        .facts .row .v { color: var(--ink); font-size: 0.9rem; text-align: right; min-width: 0; overflow-wrap: anywhere; }
+
+        /* ---------- screenshots ---------- */
+        .shots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+        }
+        .shots figure { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+        .shots a {
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--rule);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .shots a:hover { border-color: #4a4a55; transform: translateY(-2px); }
+        .shots img { display: block; width: 100%; height: auto; }
+        .shots figcaption { font-family: var(--font-display); font-size: 0.82rem; color: var(--ink-muted); text-align: center; }
+        .hint { font-size: 0.95rem; color: var(--ink-muted); margin-top: 0.9rem; }
+
+        /* ---------- video ---------- */
+        .video-wrap { text-align: center; }
+        video {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 14px;
+            border: 1px solid var(--rule);
+            background: #000;
+        }
+
+        /* ---------- icon ---------- */
+        .icon-block {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .icon-block img {
+            width: 132px;
+            height: 132px;
+            border-radius: 28px;
+            border: 1px solid var(--rule);
+        }
+        .icon-block .meta { color: var(--ink-dim); font-size: 0.98rem; }
+        .icon-block .meta a { display: inline-block; margin-top: 0.5rem; }
+
+        /* ---------- developer / contact ---------- */
+        .bio { font-size: 1.1rem; color: var(--ink); text-align: justify; }
+        #contact p { text-align: justify; }
+        .contact-email { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; }
+
+        footer {
+            font-family: var(--font-display);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            border-top: 1px solid var(--rule);
+        }
+        footer a { color: var(--ink-dim); }
+
+        @media (max-width: 520px) {
+            header { padding-top: 3rem; }
+            .pitch { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="eyebrow">Press Kit</p>
+        <img class="app-icon" src="assets/symmetry-lab-app-icon-1024.png" alt="Symmetry Lab app icon" width="84" height="84">
+        <h1 class="wordmark">Symmetry Lab</h1>
+        <p class="tagline">Create beautiful symmetrical art in seconds. Or hours.</p>
+    </header>
+
+    <main>
+        <!-- One-paragraph pitch -->
+        <section id="pitch">
+            <h2>The Pitch</h2>
+            <p class="pitch"><strong>Symmetry Lab</strong> turns simple strokes into intricate, kaleidoscopic art. Draw a single line and the app mirrors it instantly — <strong>up to 128-fold</strong>, rotational and reflected — so every gesture blooms into a mandala. Beneath that one disarming idea is a surprisingly deep toolkit: dynamic color palettes that shift as the stroke travels, a well of textured brushes, snap-to-grid modes for patterns that feel almost engineered, and an autonomous generator that draws on its own. No artistic skill required — make a mark and watch something extraordinary emerge. Quietly loved by hobbyists, artists, and kids since 2009.</p>
+        </section>
+
+        <!-- Demo video -->
+        <section id="video">
+            <h2>Demo Video</h2>
+            <div class="video-wrap">
+                <video controls autoplay muted loop playsinline preload="auto" poster="assets/symmetry-lab-demo-poster.jpg">
+                    <source src="assets/symmetry-lab-demo.mp4" type="video/mp4">
+                    <p>Your browser can't play this clip inline. <a href="assets/symmetry-lab-demo.mp4">Download the demo video (MP4)</a>.</p>
+                </video>
+                <p class="hint">A short demo loop · 926 × 1920 · H.264 MP4 · <a href="assets/symmetry-lab-demo.mp4" download>download</a></p>
+            </div>
+        </section>
+
+        <!-- Download / links -->
+        <section id="get">
+            <h2>Get Symmetry Lab</h2>
+            <div class="actions">
+                <a class="btn btn-primary" href="https://apps.apple.com/us/app/symmetry-lab/id327084012">Download on the App Store <span class="arrow">↗</span></a>
+                <a class="btn btn-ghost" href="symmetry-lab-press-kit.zip" download>Download full press kit (.zip)</a>
+            </div>
+        </section>
+
+        <!-- Fast facts -->
+        <section id="facts">
+            <h2>Fast Facts</h2>
+            <div class="facts">
+                <div class="row"><span class="k">Title</span> <span class="v">Symmetry Lab</span></div>
+                <div class="row"><span class="k">Developer</span> <span class="v">Luke Bradford</span></div>
+                <div class="row"><span class="k">Platform</span> <span class="v">iOS — iPhone <span class="amp">&amp;</span> iPad</span></div>
+                <div class="row"><span class="k">Category</span> <span class="v">Graphics <span class="amp">&amp;</span> Design</span></div>
+                <div class="row"><span class="k">Editions</span> <span class="v">Paid <span class="amp">&amp;</span> Basic</span></div>
+                <div class="row"><span class="k">Released</span> <span class="v">Originally 2009, updated continually</span></div>
+                <div class="row"><span class="k">Age rating</span> <span class="v">4+</span></div>
+                <div class="row"><span class="k">App Store</span> <span class="v"><a href="https://apps.apple.com/us/app/symmetry-lab/id327084012">apps.apple.com</a></span></div>
+                <div class="row"><span class="k">Website</span> <span class="v"><a href="https://symmetrylab.app">symmetrylab.app</a></span></div>
+                <div class="row"><span class="k">Press contact</span> <span class="v"><a href="mailto:lukebradfordapps@gmail.com">lukebradfordapps@gmail.com</a></span></div>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section id="screenshots">
+            <h2>Screenshots</h2>
+            <div class="shots">
+                <figure>
+                    <a href="assets/screenshots/symmetry-lab-01-radial.png" target="_blank" rel="noopener">
+                        <img src="assets/screenshots/symmetry-lab-01-radial.png" alt="Symmetry Lab — an intricate orange-and-yellow radial mandala on black" loading="lazy">
+                    </a>
+                    <figcaption>Intricate radial symmetry</figcaption>
+                </figure>
+                <figure>
+                    <a href="assets/screenshots/symmetry-lab-02-color.png" target="_blank" rel="noopener">
+                        <img src="assets/screenshots/symmetry-lab-02-color.png" alt="Symmetry Lab — a cool blue crystalline mandala" loading="lazy">
+                    </a>
+                    <figcaption>Dynamic color palettes</figcaption>
+                </figure>
+                <figure>
+                    <a href="assets/screenshots/symmetry-lab-03-variety.png" target="_blank" rel="noopener">
+                        <img src="assets/screenshots/symmetry-lab-03-variety.png" alt="Symmetry Lab — a field of many small multicolored pinwheel patterns" loading="lazy">
+                    </a>
+                    <figcaption>Endless variety</figcaption>
+                </figure>
+                <figure>
+                    <a href="assets/screenshots/symmetry-lab-04-symmetry-dial.png" target="_blank" rel="noopener">
+                        <img src="assets/screenshots/symmetry-lab-04-symmetry-dial.png" alt="Symmetry Lab — a cyan-and-green pattern with the symmetry dial set to 47-fold" loading="lazy">
+                    </a>
+                    <figcaption>Turning the symmetry dial</figcaption>
+                </figure>
+            </div>
+            <div class="actions" style="margin-top:1.25rem;">
+                <a class="btn btn-ghost" href="symmetry-lab-screenshots.zip" download>Download all four screenshots (.zip)</a>
+            </div>
+            <p class="hint">Click any screenshot for the full-resolution PNG (1320 × 2868), grab all four together as a .zip above, or download everything — screenshots, demo video, and icon — in the <a href="symmetry-lab-press-kit.zip" download>full press kit</a>.</p>
+        </section>
+
+        <!-- App icon -->
+        <section id="icon">
+            <h2>App Icon</h2>
+            <div class="icon-block">
+                <img src="assets/symmetry-lab-app-icon-1024.png" alt="Symmetry Lab app icon">
+                <div class="meta">
+                    High-resolution app icon, 1024 × 1024 PNG.<br>
+                    <a href="assets/symmetry-lab-app-icon-1024.png" download>Download icon</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer -->
+        <section id="developer">
+            <h2>About the Developer</h2>
+            <p class="bio">Luke Bradford is an independent iOS developer with a decade-plus body of small, design-led apps built around geometry and restraint. The same sensibility runs through all of them — minimal interfaces, considered color, and a love of getting a single idea exactly right. Symmetry Lab has been a quiet favorite since 2009, continually refined while keeping the same effortless first stroke. Also by Luke: <a href="https://quarc.app" style="font-weight:600">QUARC</a>, a twist on the classic falling block puzzle, and <a href="https://apps.apple.com/us/app/textile-minimal-notes/id1304075165" style="font-weight:600">Textile</a>, a quiet, distraction-free notes app.</p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Press Contact</h2>
+            <p>Questions, requests for promo codes, or interview requests are welcome — I usually reply within a day.</p>
+            <p style="margin-top:0.75rem;"><a class="contact-email" href="mailto:lukebradfordapps@gmail.com">lukebradfordapps@gmail.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Luke Bradford · <a href="https://symmetrylab.app">symmetrylab.app</a> · <a href="/support.html">Support</a> · <a href="https://apps.apple.com/us/app/symmetry-lab/id327084012">App Store</a>
+    </footer>
+</body>
+</html>
