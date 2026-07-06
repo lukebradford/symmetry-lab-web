@@ -22,14 +22,6 @@
     <meta name="theme-color" content="#000000">
 
     <style>
-        @font-face {
-            font-family: 'Newsreader';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url('/assets/fonts/newsreader.woff2') format('woff2');
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -42,7 +34,7 @@
             --rule-strong: #2e2e34;
 
             --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
-            --font-body:    'Newsreader', Georgia, 'Times New Roman', serif;
+            --font-body:    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
         }
 
         html { scroll-behavior: smooth; }
@@ -126,9 +118,8 @@
         }
         .pitch strong { color: #fff; font-weight: 600; }
 
-        /* classic italic ampersand */
+        /* italic ampersand */
         .amp {
-            font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", Georgia, serif;
             font-style: italic;
             font-weight: 400;
         }

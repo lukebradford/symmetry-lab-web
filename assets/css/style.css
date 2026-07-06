@@ -2,14 +2,6 @@
    symmetrylab.app
    ------------------------------------------------------------------------- */
 
-@font-face {
-  font-family: 'Newsreader';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/assets/fonts/newsreader.woff2') format('woff2');
-}
-
 /* -- tokens ---------------------------------------------------------------- */
 
 :root {
@@ -22,7 +14,7 @@
   --rule-strong:  #2e2e34;
 
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
-  --font-body:    'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
 
   --space-1:  0.5rem;
   --space-2:  1rem;
