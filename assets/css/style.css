@@ -244,7 +244,7 @@ section { padding-block: var(--space-6); }
   line-height: 1.42;
   max-width: var(--measure);
 }
-.about__lead + .about__lead { margin-top: var(--space-3); color: var(--ink-dim); }
+.about__lead + .about__lead { margin-top: var(--space-3); }
 
 /* -- features -------------------------------------------------------------- */
 
